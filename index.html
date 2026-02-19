@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TorqVault — Privacy Policy</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background-color: #1A1A2E;
+            color: #E0E0E0;
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a {
+            color: #00D4FF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 56px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+        }
+
+        .header h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .header .app-name {
+            color: #00D4FF;
+        }
+
+        .header .subtitle {
+            font-size: 1.05rem;
+            color: #8888A0;
+            margin-top: 12px;
+        }
+
+        .effective-date {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 6px 18px;
+            background: rgba(0, 212, 255, 0.08);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #00D4FF;
+            letter-spacing: 0.3px;
+        }
+
+        section {
+            margin-bottom: 44px;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.25);
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #00D4FF;
+            margin-top: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 14px;
+            color: #C8C8D8;
+        }
+
+        ul {
+            margin: 12px 0 16px 24px;
+            color: #C8C8D8;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            padding-left: 4px;
+        }
+
+        ul li::marker {
+            color: #00D4FF;
+        }
+
+        .highlight-box {
+            background: rgba(0, 212, 255, 0.05);
+            border-left: 3px solid #00D4FF;
+            padding: 18px 22px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            color: #D8D8E8;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.92rem;
+        }
+
+        .data-table thead th {
+            text-align: left;
+            padding: 12px 16px;
+            background: rgba(0, 212, 255, 0.1);
+            color: #00D4FF;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .data-table thead th:first-child {
+            border-radius: 8px 0 0 0;
+        }
+
+        .data-table thead th:last-child {
+            border-radius: 0 8px 0 0;
+        }
+
+        .data-table tbody td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            color: #C8C8D8;
+            vertical-align: top;
+        }
+
+        .data-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tbody tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .badge-local {
+            background: rgba(76, 175, 80, 0.15);
+            color: #66BB6A;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .badge-icloud {
+            background: rgba(0, 212, 255, 0.1);
+            color: #00D4FF;
+            border: 1px solid rgba(0, 212, 255, 0.25);
+        }
+
+        .badge-none {
+            background: rgba(158, 158, 158, 0.1);
+            color: #9E9E9E;
+            border: 1px solid rgba(158, 158, 158, 0.25);
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 28px;
+            margin-top: 16px;
+        }
+
+        .contact-card p {
+            margin-bottom: 8px;
+        }
+
+        .contact-card .label {
+            color: #8888A0;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            margin-bottom: 2px;
+        }
+
+        .contact-card .value {
+            color: #FFFFFF;
+            font-weight: 500;
+        }
+
+        .contact-row {
+            margin-bottom: 16px;
+        }
+
+        .contact-row:last-child {
+            margin-bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 60px;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: #5A5A70;
+        }
+
+        footer .footer-brand {
+            color: #8888A0;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 18px 60px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .data-table {
+                font-size: 0.82rem;
+            }
+
+            .data-table thead th,
+            .data-table tbody td {
+                padding: 10px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header">
+            <h1><span class="app-name">TorqVault</span> Privacy Policy</h1>
+            <p class="subtitle">Vehicle Build Documentation App for iOS</p>
+            <div class="effective-date">Effective Date: February 19, 2026</div>
+        </div>
+
+        <!-- 1. Introduction -->
+        <section>
+            <h2>1. Introduction</h2>
+            <p>
+                Welcome to TorqVault. This Privacy Policy explains how TorqVault ("the App," "we," "us," or "our"),
+                developed by Skyler Granger, handles information when you use our iOS application. TorqVault is a
+                vehicle build documentation app designed for custom car and truck builders, classic car restorers,
+                and DIY garage enthusiasts.
+            </p>
+            <div class="highlight-box">
+                <p>
+                    <strong>Our core commitment:</strong> TorqVault is built entirely with Apple-native frameworks.
+                    We do not use third-party analytics, tracking SDKs, or advertising networks. Your data stays
+                    on your device and, if you choose, in your private iCloud account. We cannot access your data.
+                </p>
+            </div>
+            <p>
+                By using TorqVault, you agree to the practices described in this Privacy Policy. If you do not agree,
+                please discontinue use of the App.
+            </p>
+        </section>
+
+        <!-- 2. Information We Collect -->
+        <section>
+            <h2>2. Information We Collect</h2>
+            <p>
+                TorqVault does not require user accounts, registration, or login. We do not collect personal
+                information such as your name, email address, phone number, or location. The App processes the
+                following data exclusively on your device or within your private iCloud container:
+            </p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Purpose</th>
+                        <th>Storage</th>
+                        <th>Shared?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Photos &amp; Camera</strong></td>
+                        <td>Document vehicle builds, modifications, and parts</td>
+                        <td><span class="badge badge-local">Device</span> <span class="badge badge-icloud">iCloud</span></td>
+                        <td><span class="badge badge-none">Never</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Speech Recognition</strong></td>
+                        <td>Hands-free voice note-taking via Apple Speech framework</td>
+                        <td><span class="badge badge-local">Device Only</span></td>
+                        <td><span class="badge badge-none">Never</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Project Data</strong></td>
+                        <td>Modification logs, parts lists, wiring diagrams, measurements, inventory</td>
+                        <td><span class="badge badge-local">Device</span> <span class="badge badge-icloud">iCloud</span></td>
+                        <td><span class="badge badge-none">Never</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>QR Code Scans</strong></td>
+                        <td>Storage box inventory management</td>
+                        <td><span class="badge badge-local">Device</span> <span class="badge badge-icloud">iCloud</span></td>
+                        <td><span class="badge badge-none">Never</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Notification Preferences</strong></td>
+                        <td>Local maintenance and task reminders</td>
+                        <td><span class="badge badge-local">Device Only</span></td>
+                        <td><span class="badge badge-none">Never</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>In-App Purchase Records</strong></td>
+                        <td>Subscription status (Pro, Shop, Lifetime tiers)</td>
+                        <td><span class="badge badge-local">Device</span> <span class="badge badge-icloud">Apple</span></td>
+                        <td><span class="badge badge-none">Never</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 3. How We Use Your Data -->
+        <section>
+            <h2>3. How We Use Your Data</h2>
+            <p>All data you create within TorqVault is used solely to provide and improve the App's functionality:</p>
+            <ul>
+                <li><strong>Photos and camera access</strong> allow you to visually document your vehicle builds and modifications. Photos are stored locally on your device and, if enabled, synced to your private iCloud container. Photos are never uploaded to any third-party server.</li>
+                <li><strong>Speech recognition</strong> uses Apple's on-device Speech framework for hands-free note-taking while working in the garage. Audio is processed entirely on your device and is never recorded, stored, or transmitted.</li>
+                <li><strong>Push notifications</strong> are used exclusively for local reminders you create, such as maintenance schedules and project tasks. We use the Apple Push Notification service (APNs) for delivery. No notification data is shared with third parties.</li>
+                <li><strong>iCloud and CloudKit sync</strong> is optional and allows your project data to stay in sync across your Apple devices. Data is stored in your private CloudKit container, which only you can access. The developer has no ability to read, access, or retrieve your iCloud data.</li>
+                <li><strong>QR code scanning</strong> uses your camera to read QR codes for storage box inventory tracking. No images or scan data are transmitted off your device.</li>
+            </ul>
+        </section>
+
+        <!-- 4. Data Storage and Security -->
+        <section>
+            <h2>4. Data Storage &amp; Security</h2>
+            <p>
+                TorqVault follows a local-first architecture. All data is stored on your device using Apple's
+                native data persistence frameworks. There are no external servers, databases, or cloud services
+                operated by the developer.
+            </p>
+            <ul>
+                <li><strong>On-device storage:</strong> Your project data, photos, and preferences are stored locally on your iOS device.</li>
+                <li><strong>iCloud sync (optional):</strong> If you enable iCloud, your data is stored in a private CloudKit container tied to your Apple ID. This data is encrypted in transit and at rest by Apple. For details, refer to <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.</li>
+                <li><strong>No server-side storage:</strong> We do not operate any servers or backend infrastructure. We have zero access to your data.</li>
+                <li><strong>Device security:</strong> We recommend enabling a passcode, Face ID, or Touch ID on your device to protect your data.</li>
+            </ul>
+        </section>
+
+        <!-- 5. Third-Party Services -->
+        <section>
+            <h2>5. Third-Party Services</h2>
+            <p>
+                TorqVault is built entirely with Apple-native frameworks. We do not integrate any third-party
+                SDKs, analytics tools, crash reporting services, or advertising networks.
+            </p>
+            <p>The only external services involved are provided by Apple:</p>
+            <ul>
+                <li><strong>Apple CloudKit / iCloud:</strong> For optional data sync across your devices.</li>
+                <li><strong>Apple Push Notification service (APNs):</strong> For delivering local reminders.</li>
+                <li><strong>Apple StoreKit:</strong> For processing in-app subscription purchases (Pro, Shop, and Lifetime tiers). Payment information is handled entirely by Apple and is never accessible to us.</li>
+            </ul>
+            <p>
+                These services are governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>
+                and <a href="https://www.apple.com/legal/internet-services/itunes/" target="_blank" rel="noopener">Apple Media Services Terms and Conditions</a>.
+            </p>
+
+            <h3>Future Advertising Disclosure</h3>
+            <p>
+                A future version of TorqVault may include advertisements in the free tier via Apple's AdServices
+                framework. If and when advertising is introduced, this Privacy Policy will be updated accordingly,
+                and users will be notified of the change. No third-party ad networks will be used.
+            </p>
+        </section>
+
+        <!-- 6. Data Sharing -->
+        <section>
+            <h2>6. Data Sharing &amp; Disclosure</h2>
+            <div class="highlight-box">
+                <p>
+                    <strong>We do not sell, rent, trade, or share your personal data with any third party.</strong>
+                    Period. Your vehicle build data, photos, and project information belong to you.
+                </p>
+            </div>
+            <p>We may only disclose information if required to:</p>
+            <ul>
+                <li>Comply with applicable law, regulation, or legal process.</li>
+                <li>Protect the rights, property, or safety of our users or the public as required or permitted by law.</li>
+            </ul>
+            <p>
+                Because we do not collect or store your data on our servers, we have no data to produce in response to
+                most legal requests.
+            </p>
+        </section>
+
+        <!-- 7. Children's Privacy -->
+        <section>
+            <h2>7. Children's Privacy</h2>
+            <p>
+                TorqVault is not directed at children under the age of 13 (or the applicable age in your jurisdiction).
+                We do not knowingly collect personal information from children. Since the App does not collect personal
+                data or require account creation, there is minimal risk of inadvertent collection. If you believe a
+                child has somehow provided personal information through the App, please contact us so we can take
+                appropriate action.
+            </p>
+        </section>
+
+        <!-- 8. Your Rights (GDPR / CCPA) -->
+        <section>
+            <h2>8. Your Rights</h2>
+
+            <h3>General Rights</h3>
+            <p>Because TorqVault stores data locally on your device and in your private iCloud container, you have direct control over your data at all times. You can:</p>
+            <ul>
+                <li><strong>Access</strong> all your data directly within the App.</li>
+                <li><strong>Delete</strong> any or all of your data from within the App at any time.</li>
+                <li><strong>Export</strong> your photos and project data using iOS sharing features.</li>
+                <li><strong>Revoke permissions</strong> for camera, speech recognition, or notifications via iOS Settings at any time.</li>
+                <li><strong>Disable iCloud sync</strong> in the App's settings or in your device's iCloud preferences.</li>
+                <li><strong>Uninstall</strong> the App to remove all locally stored data from your device.</li>
+            </ul>
+
+            <h3>For European Users (GDPR)</h3>
+            <p>
+                If you are located in the European Economic Area (EEA), the United Kingdom, or Switzerland, you have
+                additional rights under the General Data Protection Regulation (GDPR), including the right to access,
+                rectification, erasure, restriction of processing, data portability, and objection. Because all data
+                is stored locally on your device or in your private iCloud account, you can exercise these rights
+                directly without needing to contact us. We do not process your personal data on any server we control.
+            </p>
+            <p>
+                <strong>Legal basis for processing:</strong> To the extent any processing occurs, it is based on your
+                consent (granting device permissions) and the necessity to perform the contract (providing the App's
+                functionality).
+            </p>
+
+            <h3>For California Residents (CCPA)</h3>
+            <p>
+                Under the California Consumer Privacy Act (CCPA), California residents have the right to know what
+                personal information is collected, the right to delete personal information, and the right to opt out
+                of the sale of personal information. TorqVault:
+            </p>
+            <ul>
+                <li>Does <strong>not sell</strong> your personal information.</li>
+                <li>Does <strong>not share</strong> your personal information with third parties for their marketing purposes.</li>
+                <li>Does <strong>not collect</strong> personal information beyond what is described in this policy.</li>
+            </ul>
+            <p>
+                You may exercise your rights at any time by managing your data directly in the App or by contacting us
+                at the email address provided below.
+            </p>
+        </section>
+
+        <!-- 9. Data Retention -->
+        <section>
+            <h2>9. Data Retention</h2>
+            <p>
+                Your data is retained on your device and in your iCloud container for as long as you choose to keep it.
+                We have no server-side data retention because we do not operate servers.
+            </p>
+            <ul>
+                <li><strong>Deleting data in the App</strong> removes it from local storage and, if iCloud sync is enabled, from your iCloud container.</li>
+                <li><strong>Uninstalling the App</strong> removes all locally stored data. iCloud data may persist in your iCloud account until you delete it via iCloud settings.</li>
+                <li><strong>Subscription records</strong> are managed by Apple and subject to Apple's data retention policies.</li>
+            </ul>
+        </section>
+
+        <!-- 10. In-App Purchases -->
+        <section>
+            <h2>10. In-App Purchases &amp; Subscriptions</h2>
+            <p>
+                TorqVault offers a freemium model with optional subscription tiers (Pro, Shop, and Lifetime).
+                All purchases are processed through Apple's App Store using StoreKit. We do not collect, process,
+                or store any payment information. Your purchase history and billing details are managed entirely
+                by Apple under their privacy policy and terms of service.
+            </p>
+        </section>
+
+        <!-- 11. Changes to This Policy -->
+        <section>
+            <h2>11. Changes to This Policy</h2>
+            <p>
+                We may update this Privacy Policy from time to time to reflect changes in the App, legal requirements,
+                or our practices. When we make material changes, we will update the "Effective Date" at the top of this
+                page and, where appropriate, notify users through the App. We encourage you to review this policy
+                periodically.
+            </p>
+            <p>
+                Continued use of TorqVault after any changes constitutes acceptance of the revised Privacy Policy.
+            </p>
+        </section>
+
+        <!-- 12. Contact Us -->
+        <section>
+            <h2>12. Contact Us</h2>
+            <p>
+                If you have any questions, concerns, or requests regarding this Privacy Policy or your data,
+                please contact us:
+            </p>
+            <div class="contact-card">
+                <div class="contact-row">
+                    <p class="label">Developer</p>
+                    <p class="value">Skyler Granger</p>
+                </div>
+                <div class="contact-row">
+                    <p class="label">Email</p>
+                    <p class="value"><a href="mailto:scgranger1995@yahoo.com">scgranger1995@yahoo.com</a></p>
+                </div>
+                <div class="contact-row">
+                    <p class="label">App</p>
+                    <p class="value">TorqVault (com.torqvault.app)</p>
+                </div>
+                <div class="contact-row">
+                    <p class="label">Websites</p>
+                    <p class="value">
+                        <a href="https://mybuildvault.com" target="_blank" rel="noopener">mybuildvault.com</a> &middot;
+                        <a href="https://builtvault.com" target="_blank" rel="noopener">builtvault.com</a> &middot;
+                        <a href="https://buildcodex.com" target="_blank" rel="noopener">buildcodex.com</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 <span class="footer-brand">Skyler Granger</span>. All rights reserved.</p>
+            <p style="margin-top: 8px;">TorqVault &mdash; Built for builders, by a builder.</p>
+        </footer>
+
+    </div>
+</body>
+</html>
