@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TorqVault — Privacy Policy</title>
+    <title>TorqVault — The Build Documentation App for Gearheads</title>
+    <meta name="description" content="TorqVault is the iOS app for custom vehicle builders and classic car restorers. Track parts, photos, wiring diagrams, and more. Every build has a TorqVault.">
+    <meta name="theme-color" content="#1A1A2E">
+    <link rel="canonical" href="https://torqvault.com">
     <style>
         *, *::before, *::after {
             box-sizing: border-box;
@@ -11,563 +14,1011 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
             background-color: #1A1A2E;
-            color: #E0E0E0;
-            line-height: 1.7;
+            color: #C0C0C0;
+            line-height: 1.6;
             font-size: 16px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
         }
 
         a {
             color: #00D4FF;
             text-decoration: none;
+            transition: color 0.2s ease;
         }
 
         a:hover {
+            color: #33DDFF;
             text-decoration: underline;
         }
 
-        .container {
-            max-width: 820px;
+        /* ===================== NAV ===================== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(26, 26, 46, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+            padding: 0 24px;
+        }
+
+        .nav-inner {
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 60px 24px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
         }
 
-        .header {
-            text-align: center;
-            margin-bottom: 56px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.15);
-        }
-
-        .header h1 {
-            font-size: 2.4rem;
+        .nav-brand {
+            font-size: 1.4rem;
             font-weight: 700;
             color: #FFFFFF;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-brand span {
+            color: #00D4FF;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #8888A0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00D4FF;
+            text-decoration: none;
+        }
+
+        /* ===================== HERO ===================== */
+        .hero {
+            padding: 140px 24px 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 32px;
+            background: linear-gradient(135deg, #16213E 0%, #1A1A2E 100%);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
+        }
+
+        .hero-logo svg {
+            width: 56px;
+            height: 56px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            letter-spacing: -1px;
+            line-height: 1.1;
             margin-bottom: 8px;
         }
 
-        .header .app-name {
+        .hero h1 span {
             color: #00D4FF;
         }
 
-        .header .subtitle {
-            font-size: 1.05rem;
-            color: #8888A0;
-            margin-top: 12px;
-        }
-
-        .effective-date {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 6px 18px;
-            background: rgba(0, 212, 255, 0.08);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: #00D4FF;
+        .hero-tagline {
+            font-size: 1.3rem;
+            color: #FFD700;
+            font-weight: 600;
+            margin-bottom: 12px;
             letter-spacing: 0.3px;
         }
 
-        section {
-            margin-bottom: 44px;
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: #8888A0;
+            max-width: 520px;
+            margin: 0 auto 40px;
+            line-height: 1.5;
         }
 
-        h2 {
-            font-size: 1.35rem;
+        .hero-cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* App Store Badge */
+        .app-store-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #FFFFFF;
+            color: #000000;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+        }
+
+        .app-store-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+            text-decoration: none;
+            color: #000000;
+        }
+
+        .app-store-badge svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .app-store-badge .badge-text-small {
+            font-size: 0.65rem;
+            font-weight: 400;
+            display: block;
+            line-height: 1;
+            text-align: left;
+        }
+
+        .app-store-badge .badge-text-large {
+            font-size: 1.15rem;
+            font-weight: 600;
+            display: block;
+            line-height: 1.1;
+            text-align: left;
+        }
+
+        .hero-secondary-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #00D4FF;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 12px 24px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .hero-secondary-cta:hover {
+            background: rgba(0, 212, 255, 0.08);
+            border-color: rgba(0, 212, 255, 0.5);
+            text-decoration: none;
+        }
+
+        /* ===================== SECTION SHARED ===================== */
+        .section {
+            padding: 80px 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            font-size: 1.05rem;
+            color: #8888A0;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #00D4FF;
+            margin-bottom: 12px;
+        }
+
+        /* ===================== FEATURES ===================== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 32px 28px;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 212, 255, 0.2);
+            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.06);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(0, 212, 255, 0.08);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: #00D4FF;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
             font-weight: 600;
             color: #FFFFFF;
-            margin-bottom: 16px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(0, 212, 255, 0.25);
-            display: inline-block;
-        }
-
-        h3 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: #00D4FF;
-            margin-top: 24px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            margin-bottom: 14px;
-            color: #C8C8D8;
-        }
-
-        ul {
-            margin: 12px 0 16px 24px;
-            color: #C8C8D8;
-        }
-
-        ul li {
             margin-bottom: 8px;
-            padding-left: 4px;
         }
 
-        ul li::marker {
-            color: #00D4FF;
-        }
-
-        .highlight-box {
-            background: rgba(0, 212, 255, 0.05);
-            border-left: 3px solid #00D4FF;
-            padding: 18px 22px;
-            border-radius: 0 8px 8px 0;
-            margin: 20px 0;
-        }
-
-        .highlight-box p {
-            margin-bottom: 0;
-            color: #D8D8E8;
-        }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
+        .feature-card p {
             font-size: 0.92rem;
+            color: #8888A0;
+            line-height: 1.55;
         }
 
-        .data-table thead th {
-            text-align: left;
-            padding: 12px 16px;
-            background: rgba(0, 212, 255, 0.1);
-            color: #00D4FF;
+        .feature-tag {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.72rem;
             font-weight: 600;
-            font-size: 0.8rem;
+            letter-spacing: 0.3px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
-        .data-table thead th:first-child {
-            border-radius: 8px 0 0 0;
+        .tag-gold {
+            background: rgba(255, 215, 0, 0.1);
+            color: #FFD700;
+            border: 1px solid rgba(255, 215, 0, 0.2);
         }
 
-        .data-table thead th:last-child {
-            border-radius: 0 8px 0 0;
+        .tag-cyan {
+            background: rgba(0, 212, 255, 0.08);
+            color: #00D4FF;
+            border: 1px solid rgba(0, 212, 255, 0.2);
         }
 
-        .data-table tbody td {
-            padding: 12px 16px;
+        /* ===================== PRICING ===================== */
+        .pricing-section {
+            padding: 80px 24px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 36px 28px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .pricing-card.featured {
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.08);
+        }
+
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #00D4FF, #0099CC);
+            color: #FFFFFF;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 4px 16px;
+            border-radius: 20px;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+
+        .pricing-price {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin: 16px 0 4px;
+        }
+
+        .pricing-price .currency {
+            font-size: 1.2rem;
+            vertical-align: super;
+            font-weight: 600;
+        }
+
+        .pricing-period {
+            font-size: 0.85rem;
+            color: #8888A0;
+            margin-bottom: 24px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 28px;
+        }
+
+        .pricing-features li {
+            font-size: 0.9rem;
+            color: #C0C0C0;
+            padding: 8px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-            color: #C8C8D8;
-            vertical-align: top;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
         }
 
-        .data-table tbody tr:last-child td {
+        .pricing-features li:last-child {
             border-bottom: none;
         }
 
-        .data-table tbody tr:hover {
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 2px 10px;
-            border-radius: 12px;
-            font-size: 0.78rem;
-            font-weight: 600;
-        }
-
-        .badge-local {
-            background: rgba(76, 175, 80, 0.15);
-            color: #66BB6A;
-            border: 1px solid rgba(76, 175, 80, 0.3);
-        }
-
-        .badge-icloud {
-            background: rgba(0, 212, 255, 0.1);
+        .pricing-features li .check {
             color: #00D4FF;
-            border: 1px solid rgba(0, 212, 255, 0.25);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
         }
 
-        .badge-none {
-            background: rgba(158, 158, 158, 0.1);
-            color: #9E9E9E;
-            border: 1px solid rgba(158, 158, 158, 0.25);
+        .pricing-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
         }
 
-        .contact-card {
+        .pricing-btn-outline {
+            background: transparent;
+            color: #00D4FF;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .pricing-btn-outline:hover {
+            background: rgba(0, 212, 255, 0.08);
+            border-color: rgba(0, 212, 255, 0.5);
+            text-decoration: none;
+        }
+
+        .pricing-btn-primary {
+            background: linear-gradient(135deg, #00D4FF, #0099CC);
+            color: #FFFFFF;
+        }
+
+        .pricing-btn-primary:hover {
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+
+        .pricing-btn-gold {
+            background: linear-gradient(135deg, #FFD700, #CC9900);
+            color: #1A1A2E;
+        }
+
+        .pricing-btn-gold:hover {
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+            text-decoration: none;
+            color: #1A1A2E;
+        }
+
+        .pricing-note {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 0.9rem;
+            color: #8888A0;
+        }
+
+        /* ===================== CTA ===================== */
+        .cta-section {
+            padding: 80px 24px;
+            text-align: center;
+        }
+
+        .cta-box {
+            max-width: 680px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.06), rgba(255, 215, 0, 0.04));
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 24px;
+            padding: 56px 40px;
+        }
+
+        .cta-box h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+        }
+
+        .cta-box p {
+            font-size: 1.05rem;
+            color: #8888A0;
+            margin-bottom: 32px;
+            max-width: 460px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #00D4FF, #0099CC);
+            color: #FFFFFF;
+            font-size: 1.05rem;
+            font-weight: 600;
+            padding: 16px 36px;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            box-shadow: 0 6px 24px rgba(0, 212, 255, 0.3);
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+
+        .cta-trial-note {
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: #666680;
+        }
+
+        /* ===================== VEHICLE TYPES ===================== */
+        .vehicle-strip {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            padding: 0 24px;
+        }
+
+        .vehicle-type {
+            text-align: center;
+        }
+
+        .vehicle-type-icon {
+            width: 56px;
+            height: 56px;
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 12px;
-            padding: 28px;
-            margin-top: 16px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            transition: border-color 0.2s ease;
         }
 
-        .contact-card p {
-            margin-bottom: 8px;
+        .vehicle-type:hover .vehicle-type-icon {
+            border-color: rgba(0, 212, 255, 0.3);
         }
 
-        .contact-card .label {
-            color: #8888A0;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.4px;
-            margin-bottom: 2px;
+        .vehicle-type-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: #8888A0;
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
-        .contact-card .value {
-            color: #FFFFFF;
+        .vehicle-type span {
+            font-size: 0.75rem;
+            color: #666680;
             font-weight: 500;
         }
 
-        .contact-row {
-            margin-bottom: 16px;
+        /* ===================== FOOTER ===================== */
+        .footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 48px 24px 32px;
         }
 
-        .contact-row:last-child {
-            margin-bottom: 0;
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 32px;
         }
 
-        footer {
-            text-align: center;
-            padding: 40px 0 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            margin-top: 60px;
+        .footer-brand-col h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 8px;
         }
 
-        footer p {
+        .footer-brand-col h4 span {
+            color: #00D4FF;
+        }
+
+        .footer-brand-col p {
             font-size: 0.85rem;
-            color: #5A5A70;
+            color: #666680;
+            max-width: 280px;
         }
 
-        footer .footer-brand {
+        .footer-links-col h5 {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             color: #8888A0;
-            font-weight: 600;
+            margin-bottom: 12px;
         }
 
-        @media (max-width: 600px) {
-            .container {
-                padding: 40px 18px 60px;
+        .footer-links-col ul {
+            list-style: none;
+        }
+
+        .footer-links-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links-col ul li a {
+            color: #666680;
+            font-size: 0.88rem;
+            transition: color 0.2s ease;
+            text-decoration: none;
+        }
+
+        .footer-links-col ul li a:hover {
+            color: #00D4FF;
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 32px auto 0;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom p {
+            font-size: 0.8rem;
+            color: #4A4A60;
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 900px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .header h1 {
-                font-size: 1.8rem;
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 420px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                gap: 16px;
             }
 
-            h2 {
-                font-size: 1.2rem;
-            }
-
-            .data-table {
+            .nav-links a {
                 font-size: 0.82rem;
             }
 
-            .data-table thead th,
-            .data-table tbody td {
-                padding: 10px 10px;
+            .hero {
+                padding: 120px 20px 60px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.1rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 1.7rem;
+            }
+
+            .vehicle-strip {
+                gap: 20px;
+            }
+
+            .cta-box {
+                padding: 40px 24px;
+            }
+
+            .cta-box h2 {
+                font-size: 1.6rem;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
 
-        <!-- Header -->
-        <div class="header">
-            <h1><span class="app-name">TorqVault</span> Privacy Policy</h1>
-            <p class="subtitle">Vehicle Build Documentation App for iOS</p>
-            <div class="effective-date">Effective Date: February 19, 2026</div>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="nav-brand"><span>Torq</span>Vault</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-logo">
+            <!-- Shield/Wrench icon representing TorqVault -->
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M28 4L8 14V28C8 40.36 16.64 51.68 28 54C39.36 51.68 48 40.36 48 28V14L28 4Z" stroke="#00D4FF" stroke-width="2" fill="rgba(0,212,255,0.06)"/>
+                <path d="M22 28L20 34L28 30L36 34L34 28L38 22H32L28 16L24 22H18L22 28Z" stroke="#FFD700" stroke-width="1.5" fill="rgba(255,215,0,0.08)"/>
+            </svg>
+        </div>
+        <h1><span>Torq</span>Vault</h1>
+        <p class="hero-tagline">Every build has a TorqVault</p>
+        <p class="hero-subtitle">The build documentation app for gearheads. Track parts, snap photos, wire diagrams, and manage your garage -- all from your phone.</p>
+        <div class="hero-cta-group">
+            <!-- TODO: Replace href="#" with actual App Store link after launch -->
+            <a href="#" class="app-store-badge" aria-label="Download on the App Store">
+                <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.05 12.536c-.028-2.973 2.425-4.4 2.536-4.47-1.38-2.02-3.53-2.296-4.296-2.328-1.828-.185-3.572 1.078-4.5 1.078-.928 0-2.362-1.05-3.882-1.022C4.78 5.822 2.778 7.006 1.672 8.868c-2.234 3.878-.572 9.626 1.604 12.774 1.064 1.54 2.332 3.27 3.998 3.208 1.604-.064 2.21-1.038 4.15-1.038 1.938 0 2.482 1.038 4.17.998 1.726-.028 2.822-1.568 3.872-3.116 1.22-1.788 1.722-3.518 1.75-3.608-.038-.018-3.358-1.29-3.392-5.118l.226.568z" fill="#000"/>
+                    <path d="M14.042 3.846C14.924 2.772 15.528 1.296 15.36 0c-1.318.054-2.916.878-3.862 1.988-.848.982-1.592 2.55-1.392 4.054 1.47.114 2.97-.748 3.936-2.196z" fill="#000"/>
+                </svg>
+                <div>
+                    <span class="badge-text-small">Download on the</span>
+                    <span class="badge-text-large">App Store</span>
+                </div>
+            </a>
+            <a href="#features" class="hero-secondary-cta">
+                Learn More
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10m0 0l4-4m-4 4L4 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
         </div>
 
-        <!-- 1. Introduction -->
-        <section>
-            <h2>1. Introduction</h2>
-            <p>
-                Welcome to TorqVault. This Privacy Policy explains how TorqVault ("the App," "we," "us," or "our"),
-                developed by Skyler Granger, handles information when you use our iOS application. TorqVault is a
-                vehicle build documentation app designed for custom car and truck builders, classic car restorers,
-                and DIY garage enthusiasts.
-            </p>
-            <div class="highlight-box">
-                <p>
-                    <strong>Our core commitment:</strong> TorqVault is built entirely with Apple-native frameworks.
-                    We do not use third-party analytics, tracking SDKs, or advertising networks. Your data stays
-                    on your device and, if you choose, in your private iCloud account. We cannot access your data.
-                </p>
+        <!-- Vehicle Types Strip -->
+        <div class="vehicle-strip">
+            <div class="vehicle-type">
+                <div class="vehicle-type-icon">
+                    <svg viewBox="0 0 28 28"><rect x="4" y="12" width="20" height="8" rx="2"/><circle cx="9" cy="20" r="2.5"/><circle cx="19" cy="20" r="2.5"/><path d="M7 12l2-5h10l2 5"/></svg>
+                </div>
+                <span>Cars</span>
             </div>
-            <p>
-                By using TorqVault, you agree to the practices described in this Privacy Policy. If you do not agree,
-                please discontinue use of the App.
-            </p>
-        </section>
-
-        <!-- 2. Information We Collect -->
-        <section>
-            <h2>2. Information We Collect</h2>
-            <p>
-                TorqVault does not require user accounts, registration, or login. We do not collect personal
-                information such as your name, email address, phone number, or location. The App processes the
-                following data exclusively on your device or within your private iCloud container:
-            </p>
-
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Data Type</th>
-                        <th>Purpose</th>
-                        <th>Storage</th>
-                        <th>Shared?</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Photos &amp; Camera</strong></td>
-                        <td>Document vehicle builds, modifications, and parts</td>
-                        <td><span class="badge badge-local">Device</span> <span class="badge badge-icloud">iCloud</span></td>
-                        <td><span class="badge badge-none">Never</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Speech Recognition</strong></td>
-                        <td>Hands-free voice note-taking via Apple Speech framework</td>
-                        <td><span class="badge badge-local">Device Only</span></td>
-                        <td><span class="badge badge-none">Never</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Project Data</strong></td>
-                        <td>Modification logs, parts lists, wiring diagrams, measurements, inventory</td>
-                        <td><span class="badge badge-local">Device</span> <span class="badge badge-icloud">iCloud</span></td>
-                        <td><span class="badge badge-none">Never</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>QR Code Scans</strong></td>
-                        <td>Storage box inventory management</td>
-                        <td><span class="badge badge-local">Device</span> <span class="badge badge-icloud">iCloud</span></td>
-                        <td><span class="badge badge-none">Never</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Notification Preferences</strong></td>
-                        <td>Local maintenance and task reminders</td>
-                        <td><span class="badge badge-local">Device Only</span></td>
-                        <td><span class="badge badge-none">Never</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>In-App Purchase Records</strong></td>
-                        <td>Subscription status (Pro, Shop, Lifetime tiers)</td>
-                        <td><span class="badge badge-local">Device</span> <span class="badge badge-icloud">Apple</span></td>
-                        <td><span class="badge badge-none">Never</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <!-- 3. How We Use Your Data -->
-        <section>
-            <h2>3. How We Use Your Data</h2>
-            <p>All data you create within TorqVault is used solely to provide and improve the App's functionality:</p>
-            <ul>
-                <li><strong>Photos and camera access</strong> allow you to visually document your vehicle builds and modifications. Photos are stored locally on your device and, if enabled, synced to your private iCloud container. Photos are never uploaded to any third-party server.</li>
-                <li><strong>Speech recognition</strong> uses Apple's on-device Speech framework for hands-free note-taking while working in the garage. Audio is processed entirely on your device and is never recorded, stored, or transmitted.</li>
-                <li><strong>Push notifications</strong> are used exclusively for local reminders you create, such as maintenance schedules and project tasks. We use the Apple Push Notification service (APNs) for delivery. No notification data is shared with third parties.</li>
-                <li><strong>iCloud and CloudKit sync</strong> is optional and allows your project data to stay in sync across your Apple devices. Data is stored in your private CloudKit container, which only you can access. The developer has no ability to read, access, or retrieve your iCloud data.</li>
-                <li><strong>QR code scanning</strong> uses your camera to read QR codes for storage box inventory tracking. No images or scan data are transmitted off your device.</li>
-            </ul>
-        </section>
-
-        <!-- 4. Data Storage and Security -->
-        <section>
-            <h2>4. Data Storage &amp; Security</h2>
-            <p>
-                TorqVault follows a local-first architecture. All data is stored on your device using Apple's
-                native data persistence frameworks. There are no external servers, databases, or cloud services
-                operated by the developer.
-            </p>
-            <ul>
-                <li><strong>On-device storage:</strong> Your project data, photos, and preferences are stored locally on your iOS device.</li>
-                <li><strong>iCloud sync (optional):</strong> If you enable iCloud, your data is stored in a private CloudKit container tied to your Apple ID. This data is encrypted in transit and at rest by Apple. For details, refer to <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.</li>
-                <li><strong>No server-side storage:</strong> We do not operate any servers or backend infrastructure. We have zero access to your data.</li>
-                <li><strong>Device security:</strong> We recommend enabling a passcode, Face ID, or Touch ID on your device to protect your data.</li>
-            </ul>
-        </section>
-
-        <!-- 5. Third-Party Services -->
-        <section>
-            <h2>5. Third-Party Services</h2>
-            <p>
-                TorqVault is built entirely with Apple-native frameworks. We do not integrate any third-party
-                SDKs, analytics tools, crash reporting services, or advertising networks.
-            </p>
-            <p>The only external services involved are provided by Apple:</p>
-            <ul>
-                <li><strong>Apple CloudKit / iCloud:</strong> For optional data sync across your devices.</li>
-                <li><strong>Apple Push Notification service (APNs):</strong> For delivering local reminders.</li>
-                <li><strong>Apple StoreKit:</strong> For processing in-app subscription purchases (Pro, Shop, and Lifetime tiers). Payment information is handled entirely by Apple and is never accessible to us.</li>
-            </ul>
-            <p>
-                These services are governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>
-                and <a href="https://www.apple.com/legal/internet-services/itunes/" target="_blank" rel="noopener">Apple Media Services Terms and Conditions</a>.
-            </p>
-
-            <h3>Future Advertising Disclosure</h3>
-            <p>
-                A future version of TorqVault may include advertisements in the free tier via Apple's AdServices
-                framework. If and when advertising is introduced, this Privacy Policy will be updated accordingly,
-                and users will be notified of the change. No third-party ad networks will be used.
-            </p>
-        </section>
-
-        <!-- 6. Data Sharing -->
-        <section>
-            <h2>6. Data Sharing &amp; Disclosure</h2>
-            <div class="highlight-box">
-                <p>
-                    <strong>We do not sell, rent, trade, or share your personal data with any third party.</strong>
-                    Period. Your vehicle build data, photos, and project information belong to you.
-                </p>
+            <div class="vehicle-type">
+                <div class="vehicle-type-icon">
+                    <svg viewBox="0 0 28 28"><rect x="3" y="11" width="22" height="9" rx="2"/><circle cx="8" cy="20" r="2.5"/><circle cx="20" cy="20" r="2.5"/><path d="M5 11V8h10l4 3"/><path d="M19 11V8h3v3"/></svg>
+                </div>
+                <span>Trucks</span>
             </div>
-            <p>We may only disclose information if required to:</p>
-            <ul>
-                <li>Comply with applicable law, regulation, or legal process.</li>
-                <li>Protect the rights, property, or safety of our users or the public as required or permitted by law.</li>
-            </ul>
-            <p>
-                Because we do not collect or store your data on our servers, we have no data to produce in response to
-                most legal requests.
-            </p>
-        </section>
-
-        <!-- 7. Children's Privacy -->
-        <section>
-            <h2>7. Children's Privacy</h2>
-            <p>
-                TorqVault is not directed at children under the age of 13 (or the applicable age in your jurisdiction).
-                We do not knowingly collect personal information from children. Since the App does not collect personal
-                data or require account creation, there is minimal risk of inadvertent collection. If you believe a
-                child has somehow provided personal information through the App, please contact us so we can take
-                appropriate action.
-            </p>
-        </section>
-
-        <!-- 8. Your Rights (GDPR / CCPA) -->
-        <section>
-            <h2>8. Your Rights</h2>
-
-            <h3>General Rights</h3>
-            <p>Because TorqVault stores data locally on your device and in your private iCloud container, you have direct control over your data at all times. You can:</p>
-            <ul>
-                <li><strong>Access</strong> all your data directly within the App.</li>
-                <li><strong>Delete</strong> any or all of your data from within the App at any time.</li>
-                <li><strong>Export</strong> your photos and project data using iOS sharing features.</li>
-                <li><strong>Revoke permissions</strong> for camera, speech recognition, or notifications via iOS Settings at any time.</li>
-                <li><strong>Disable iCloud sync</strong> in the App's settings or in your device's iCloud preferences.</li>
-                <li><strong>Uninstall</strong> the App to remove all locally stored data from your device.</li>
-            </ul>
-
-            <h3>For European Users (GDPR)</h3>
-            <p>
-                If you are located in the European Economic Area (EEA), the United Kingdom, or Switzerland, you have
-                additional rights under the General Data Protection Regulation (GDPR), including the right to access,
-                rectification, erasure, restriction of processing, data portability, and objection. Because all data
-                is stored locally on your device or in your private iCloud account, you can exercise these rights
-                directly without needing to contact us. We do not process your personal data on any server we control.
-            </p>
-            <p>
-                <strong>Legal basis for processing:</strong> To the extent any processing occurs, it is based on your
-                consent (granting device permissions) and the necessity to perform the contract (providing the App's
-                functionality).
-            </p>
-
-            <h3>For California Residents (CCPA)</h3>
-            <p>
-                Under the California Consumer Privacy Act (CCPA), California residents have the right to know what
-                personal information is collected, the right to delete personal information, and the right to opt out
-                of the sale of personal information. TorqVault:
-            </p>
-            <ul>
-                <li>Does <strong>not sell</strong> your personal information.</li>
-                <li>Does <strong>not share</strong> your personal information with third parties for their marketing purposes.</li>
-                <li>Does <strong>not collect</strong> personal information beyond what is described in this policy.</li>
-            </ul>
-            <p>
-                You may exercise your rights at any time by managing your data directly in the App or by contacting us
-                at the email address provided below.
-            </p>
-        </section>
-
-        <!-- 9. Data Retention -->
-        <section>
-            <h2>9. Data Retention</h2>
-            <p>
-                Your data is retained on your device and in your iCloud container for as long as you choose to keep it.
-                We have no server-side data retention because we do not operate servers.
-            </p>
-            <ul>
-                <li><strong>Deleting data in the App</strong> removes it from local storage and, if iCloud sync is enabled, from your iCloud container.</li>
-                <li><strong>Uninstalling the App</strong> removes all locally stored data. iCloud data may persist in your iCloud account until you delete it via iCloud settings.</li>
-                <li><strong>Subscription records</strong> are managed by Apple and subject to Apple's data retention policies.</li>
-            </ul>
-        </section>
-
-        <!-- 10. In-App Purchases -->
-        <section>
-            <h2>10. In-App Purchases &amp; Subscriptions</h2>
-            <p>
-                TorqVault offers a freemium model with optional subscription tiers (Pro, Shop, and Lifetime).
-                All purchases are processed through Apple's App Store using StoreKit. We do not collect, process,
-                or store any payment information. Your purchase history and billing details are managed entirely
-                by Apple under their privacy policy and terms of service.
-            </p>
-        </section>
-
-        <!-- 11. Changes to This Policy -->
-        <section>
-            <h2>11. Changes to This Policy</h2>
-            <p>
-                We may update this Privacy Policy from time to time to reflect changes in the App, legal requirements,
-                or our practices. When we make material changes, we will update the "Effective Date" at the top of this
-                page and, where appropriate, notify users through the App. We encourage you to review this policy
-                periodically.
-            </p>
-            <p>
-                Continued use of TorqVault after any changes constitutes acceptance of the revised Privacy Policy.
-            </p>
-        </section>
-
-        <!-- 12. Contact Us -->
-        <section>
-            <h2>12. Contact Us</h2>
-            <p>
-                If you have any questions, concerns, or requests regarding this Privacy Policy or your data,
-                please contact us:
-            </p>
-            <div class="contact-card">
-                <div class="contact-row">
-                    <p class="label">Developer</p>
-                    <p class="value">Skyler Granger</p>
+            <div class="vehicle-type">
+                <div class="vehicle-type-icon">
+                    <svg viewBox="0 0 28 28"><path d="M4 18c0 0 2-8 10-8s10 8 10 8"/><path d="M4 18h20v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2z"/><path d="M7 18v-3"/><path d="M21 18v-3"/></svg>
                 </div>
-                <div class="contact-row">
-                    <p class="label">Email</p>
-                    <p class="value"><a href="mailto:scgranger1995@yahoo.com">scgranger1995@yahoo.com</a></p>
-                </div>
-                <div class="contact-row">
-                    <p class="label">App</p>
-                    <p class="value">TorqVault (com.torqvault.app)</p>
-                </div>
-                <div class="contact-row">
-                    <p class="label">Websites</p>
-                    <p class="value">
-                        <a href="https://mybuildvault.com" target="_blank" rel="noopener">mybuildvault.com</a> &middot;
-                        <a href="https://builtvault.com" target="_blank" rel="noopener">builtvault.com</a> &middot;
-                        <a href="https://buildcodex.com" target="_blank" rel="noopener">buildcodex.com</a>
-                    </p>
-                </div>
+                <span>Boats</span>
             </div>
-        </section>
+            <div class="vehicle-type">
+                <div class="vehicle-type-icon">
+                    <svg viewBox="0 0 28 28"><rect x="8" y="8" width="12" height="12" rx="3"/><circle cx="10" cy="22" r="2"/><circle cx="18" cy="22" r="2"/><path d="M14 8V5"/><path d="M10 8l-2-4"/><path d="M18 8l2-4"/></svg>
+                </div>
+                <span>ATVs</span>
+            </div>
+            <div class="vehicle-type">
+                <div class="vehicle-type-icon">
+                    <svg viewBox="0 0 28 28"><circle cx="9" cy="20" r="3"/><circle cx="19" cy="20" r="3"/><path d="M9 17l5-9h2l3 9"/><path d="M12 8l-1 4"/><path d="M16 12h-6"/></svg>
+                </div>
+                <span>Dirt Bikes</span>
+            </div>
+            <div class="vehicle-type">
+                <div class="vehicle-type-icon">
+                    <svg viewBox="0 0 28 28"><circle cx="7" cy="19" r="3.5"/><circle cx="21" cy="19" r="3.5"/><path d="M7 15.5l4-6h4l4 2 2 4"/><path d="M11 9.5l1 6"/><path d="M15 11.5l-1 4"/></svg>
+                </div>
+                <span>Motorcycles</span>
+            </div>
+        </div>
+    </section>
 
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2026 <span class="footer-brand">Skyler Granger</span>. All rights reserved.</p>
-            <p style="margin-top: 8px;">TorqVault &mdash; Built for builders, by a builder.</p>
-        </footer>
+    <!-- Features Section -->
+    <section class="section" id="features">
+        <div class="section-header">
+            <span class="section-label">Features</span>
+            <h2>Built for the Garage</h2>
+            <p>Everything you need to document, organize, and track your builds from the ground up.</p>
+        </div>
 
-    </div>
+        <div class="features-grid">
+            <!-- Feature 1: Track Any Vehicle -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 3v18"/><path d="M3 9h18"/></svg>
+                </div>
+                <h3>Track Any Vehicle</h3>
+                <p>Cars, trucks, boats, ATVs, dirt bikes, and motorcycles. Six vehicle types with dedicated project tracking and unlimited modifications.</p>
+            </div>
+
+            <!-- Feature 2: Parts Catalog -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="4"/><path d="M15 7l2-2"/><path d="M17 5l2 2"/><path d="M6 18l-2 2"/><path d="M20 12h2"/><path d="M2 12h2"/><path d="M12 2v2"/><path d="M12 20v2"/></svg>
+                </div>
+                <h3>Parts Catalog with Lineage</h3>
+                <p>23 part categories with "Frankenstein" donor vehicle tracking. Know exactly where every part came from and where it went.</p>
+                <span class="feature-tag tag-gold">Unique to TorqVault</span>
+            </div>
+
+            <!-- Feature 3: Photo Gallery -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                </div>
+                <h3>Photo Gallery &amp; Before/After</h3>
+                <p>Document every stage of your build with organized photo galleries and side-by-side before/after comparisons.</p>
+            </div>
+
+            <!-- Feature 4: Wiring Diagrams -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24"><path d="M2 12h4"/><path d="M18 12h4"/><path d="M6 12c0-3 2-6 6-6s6 3 6 6-2 6-6 6-6-3-6-6z"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/><circle cx="12" cy="14" r="1"/></svg>
+                </div>
+                <h3>Wiring Diagrams</h3>
+                <p>Interactive pinout editor for documenting custom wiring harnesses, connections, and electrical modifications.</p>
+                <span class="feature-tag tag-cyan">Pro</span>
+            </div>
+
+            <!-- Feature 5: QR Storage -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="3" height="3"/><path d="M21 14h-3v3"/><path d="M21 21h-3v-3"/></svg>
+                </div>
+                <h3>QR Storage Inventory</h3>
+                <p>Label your storage boxes with QR codes and scan to instantly see what is inside. Never lose a bolt again.</p>
+                <span class="feature-tag tag-cyan">Pro</span>
+            </div>
+
+            <!-- Feature 6: Garage Mode -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z"/><path d="M12 22V12"/><path d="M3 7l9 5"/><path d="M21 7l-9 5"/></svg>
+                </div>
+                <h3>Garage Mode</h3>
+                <p>Oversized buttons and voice input for when your hands are covered in grease. Built for real garage conditions.</p>
+                <span class="feature-tag tag-gold">Fan Favorite</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="section-header">
+            <span class="section-label">Pricing</span>
+            <h2>Simple, Honest Pricing</h2>
+            <p>Start free. Upgrade when your build demands it.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Free Tier -->
+            <div class="pricing-card">
+                <h3>Garage Starter</h3>
+                <div class="pricing-price">Free</div>
+                <div class="pricing-period">No credit card required</div>
+                <ul class="pricing-features">
+                    <li><span class="check">&#10003;</span> 1 active project</li>
+                    <li><span class="check">&#10003;</span> 25 parts per project</li>
+                    <li><span class="check">&#10003;</span> Photo gallery</li>
+                    <li><span class="check">&#10003;</span> Modification logging</li>
+                    <li><span class="check">&#10003;</span> Basic search</li>
+                </ul>
+                <!-- TODO: Replace href="#" with actual App Store link after launch -->
+                <a href="#" class="pricing-btn pricing-btn-outline">Get Started</a>
+            </div>
+
+            <!-- Pro Tier -->
+            <div class="pricing-card featured">
+                <h3>Pro</h3>
+                <div class="pricing-price"><span class="currency">$</span>9.99</div>
+                <div class="pricing-period">per month &middot; or $59.99/year</div>
+                <ul class="pricing-features">
+                    <li><span class="check">&#10003;</span> Unlimited projects</li>
+                    <li><span class="check">&#10003;</span> Unlimited parts</li>
+                    <li><span class="check">&#10003;</span> Wiring diagram editor</li>
+                    <li><span class="check">&#10003;</span> QR storage inventory</li>
+                    <li><span class="check">&#10003;</span> Garage Mode</li>
+                    <li><span class="check">&#10003;</span> Before/after photos</li>
+                    <li><span class="check">&#10003;</span> Build report PDF export</li>
+                    <li><span class="check">&#10003;</span> Ad-free experience</li>
+                </ul>
+                <!-- TODO: Replace href="#" with actual App Store link after launch -->
+                <a href="#" class="pricing-btn pricing-btn-primary">Start 14-Day Free Trial</a>
+            </div>
+
+            <!-- Lifetime Tier -->
+            <div class="pricing-card">
+                <h3>Lifetime</h3>
+                <div class="pricing-price"><span class="currency">$</span>179.99</div>
+                <div class="pricing-period">one-time purchase</div>
+                <ul class="pricing-features">
+                    <li><span class="check">&#10003;</span> Everything in Pro</li>
+                    <li><span class="check">&#10003;</span> Pay once, own forever</li>
+                    <li><span class="check">&#10003;</span> All future Pro features</li>
+                    <li><span class="check">&#10003;</span> Support indie development</li>
+                </ul>
+                <!-- TODO: Replace href="#" with actual App Store link after launch -->
+                <a href="#" class="pricing-btn pricing-btn-gold">Buy Lifetime</a>
+            </div>
+        </div>
+
+        <p class="pricing-note">All plans include iCloud sync, local data storage, and zero third-party tracking. Prices may vary by region.</p>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-box">
+            <h2>Start Your 14-Day Free Trial</h2>
+            <p>Unlock every Pro feature. No commitment. Cancel anytime.</p>
+            <!-- TODO: Replace href="#" with actual App Store link after launch -->
+            <a href="#" class="cta-btn">
+                Download TorqVault
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3v8m0 0l3-3m-3 3L6 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 13v1a2 2 0 002 2h8a2 2 0 002-2v-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <p class="cta-trial-note">Available on iPhone and iPad &middot; iOS 17+</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand-col">
+                <h4><span>Torq</span>Vault</h4>
+                <p>The build documentation app for custom vehicle builders, classic car restorers, and DIY garage enthusiasts.</p>
+            </div>
+            <div class="footer-links-col">
+                <h5>Legal</h5>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Terms of Use (EULA)</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-col">
+                <h5>Contact</h5>
+                <ul>
+                    <li><a href="mailto:scgranger1995@yahoo.com">scgranger1995@yahoo.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-col">
+                <h5>Domains</h5>
+                <ul>
+                    <li><a href="https://mybuildvault.com" target="_blank" rel="noopener">mybuildvault.com</a></li>
+                    <li><a href="https://builtvault.com" target="_blank" rel="noopener">builtvault.com</a></li>
+                    <li><a href="https://buildcodex.com" target="_blank" rel="noopener">buildcodex.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Skyler Granger. All rights reserved.</p>
+            <p>TorqVault &mdash; Built for builders, by a builder.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
