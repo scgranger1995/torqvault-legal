@@ -275,7 +275,7 @@
         <div class="header">
             <h1><span class="app-name">TorqVault</span> Privacy Policy</h1>
             <p class="subtitle">Vehicle Build Documentation App for iOS</p>
-            <div class="effective-date">Effective Date: February 19, 2026</div>
+            <div class="effective-date">Effective Date: February 23, 2026</div>
         </div>
 
         <!-- 1. Introduction -->
@@ -289,9 +289,9 @@
             </p>
             <div class="highlight-box">
                 <p>
-                    <strong>Our core commitment:</strong> TorqVault is built entirely with Apple-native frameworks.
-                    We do not use third-party analytics, tracking SDKs, or advertising networks. Your data stays
-                    on your device and, if you choose, in your private iCloud account. We cannot access your data.
+                    <strong>Our core commitment:</strong> Your project data stays on your device and, if you choose,
+                    in your private iCloud account. We cannot access your project data. The free tier displays
+                    banner advertisements via Google AdMob; Pro subscribers enjoy an ad-free experience.
                 </p>
             </div>
             <p>
@@ -351,9 +351,15 @@
                     </tr>
                     <tr>
                         <td><strong>In-App Purchase Records</strong></td>
-                        <td>Subscription status (Pro, Shop, Lifetime tiers)</td>
+                        <td>Subscription status (Pro tier)</td>
                         <td><span class="badge badge-local">Device</span> <span class="badge badge-icloud">Apple</span></td>
                         <td><span class="badge badge-none">Never</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Advertising Data</strong></td>
+                        <td>Banner ads on the free tier via Google AdMob</td>
+                        <td><span class="badge badge-icloud">Google</span></td>
+                        <td>See Section 5</td>
                     </tr>
                 </tbody>
             </table>
@@ -391,27 +397,40 @@
         <!-- 5. Third-Party Services -->
         <section>
             <h2>5. Third-Party Services</h2>
-            <p>
-                TorqVault is built entirely with Apple-native frameworks. We do not integrate any third-party
-                SDKs, analytics tools, crash reporting services, or advertising networks.
-            </p>
-            <p>The only external services involved are provided by Apple:</p>
+            <p>TorqVault integrates the following external services:</p>
+
+            <h3>Apple Services</h3>
             <ul>
                 <li><strong>Apple CloudKit / iCloud:</strong> For optional data sync across your devices.</li>
                 <li><strong>Apple Push Notification service (APNs):</strong> For delivering local reminders.</li>
-                <li><strong>Apple StoreKit:</strong> For processing in-app subscription purchases (Pro, Shop, and Lifetime tiers). Payment information is handled entirely by Apple and is never accessible to us.</li>
+                <li><strong>Apple StoreKit:</strong> For processing in-app subscription purchases (Pro tier). Payment information is handled entirely by Apple and is never accessible to us.</li>
             </ul>
             <p>
                 These services are governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>
                 and <a href="https://www.apple.com/legal/internet-services/itunes/" target="_blank" rel="noopener">Apple Media Services Terms and Conditions</a>.
             </p>
 
-            <h3>Future Advertising Disclosure</h3>
+            <h3>Google AdMob (Free Tier Only)</h3>
             <p>
-                A future version of TorqVault may include advertisements in the free tier via Apple's AdServices
-                framework. If and when advertising is introduced, this Privacy Policy will be updated accordingly,
-                and users will be notified of the change. No third-party ad networks will be used.
+                TorqVault displays banner advertisements to users on the free tier via
+                <a href="https://admob.google.com" target="_blank" rel="noopener">Google AdMob</a>.
+                Pro subscribers do not see any advertisements.
             </p>
+            <p>Google AdMob may collect the following data to serve and measure ads:</p>
+            <ul>
+                <li>Device identifiers (IDFA, if you grant permission via the App Tracking Transparency prompt)</li>
+                <li>IP address (used for approximate location and fraud prevention)</li>
+                <li>Device information (model, OS version, screen size)</li>
+                <li>Ad interaction data (impressions, taps)</li>
+            </ul>
+            <div class="highlight-box">
+                <p>
+                    <strong>Important:</strong> Google AdMob does not have access to your TorqVault project data, photos,
+                    or any content you create in the app. Ad data is handled entirely by Google and is governed by
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
+                    You can opt out of personalized ads in your device's Settings &gt; Privacy &amp; Security &gt; Apple Advertising.
+                </p>
+            </div>
         </section>
 
         <!-- 6. Data Sharing -->
@@ -510,10 +529,10 @@
         <section>
             <h2>10. In-App Purchases &amp; Subscriptions</h2>
             <p>
-                TorqVault offers a freemium model with optional subscription tiers (Pro, Shop, and Lifetime).
+                TorqVault offers a freemium model with an optional Pro subscription (monthly or annual).
                 All purchases are processed through Apple's App Store using StoreKit. We do not collect, process,
                 or store any payment information. Your purchase history and billing details are managed entirely
-                by Apple under their privacy policy and terms of service.
+                by Apple under their privacy policy and terms of service. Pro subscribers enjoy an ad-free experience.
             </p>
         </section>
 
